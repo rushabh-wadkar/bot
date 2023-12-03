@@ -13,7 +13,7 @@ class RMQLogger:
         # formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
         formatter = logging.Formatter(
-            '[%(levelname)s] [%(asctime)s] %(message)s [%(name)s]')
+            '[%(levelname)s] [%(asctime)s] %(message)s')
 
         # Set up RMQ connection and channel
         credentials = pika.PlainCredentials(
