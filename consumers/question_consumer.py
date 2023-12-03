@@ -155,11 +155,11 @@ def handle_question_callback(ch, method, properties, body):
         if constants.FETCH_PREVIOUS_QUESTIONS:
             q_list = fetch_previous_questions(from_number)
 
-            for question in q_list:
+            for item in q_list:
                 chat.memory.chat_memory.add_user_message(
-                    message=question["chat_question"])
+                    message=item["chat_question"])
                 chat.memory.chat_memory.add_ai_message(
-                    message=question["chat_answer"])
+                    message=item["chat_answer"])
 
         result = chat({"query": question})
         response = result["result"]
