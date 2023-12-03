@@ -42,6 +42,9 @@ services:
     container_name: api-server-1
     restart: always
     environment:
+      RABBITMQ_DEFAULT_USER: root
+      RABBITMQ_DEFAULT_PASS: rootuser@9907
+      RABBITMQ_DEFAULT_VHOST: /
       RMQ_HOST: rabbitmq
       DB_HOST: mongo
     depends_on:
@@ -55,6 +58,9 @@ services:
     container_name: api-server-2
     restart: always
     environment:
+      RABBITMQ_DEFAULT_USER: root
+      RABBITMQ_DEFAULT_PASS: rootuser@9907
+      RABBITMQ_DEFAULT_VHOST: /
       RMQ_HOST: rabbitmq
       DB_HOST: mongo
     depends_on:
@@ -67,6 +73,12 @@ services:
       dockerfile: Dockerfile.consumers.logger
     container_name: logger_consumer
     restart: always
+    environment:
+      RABBITMQ_DEFAULT_USER: root
+      RABBITMQ_DEFAULT_PASS: rootuser@9907
+      RABBITMQ_DEFAULT_VHOST: /
+      RMQ_HOST: rabbitmq
+      DB_HOST: mongo
     depends_on:
       rabbitmq:
         condition: service_healthy
@@ -77,6 +89,12 @@ services:
       dockerfile: Dockerfile.consumers.question
     container_name: question-consumer-1
     restart: always
+    environment:
+      RABBITMQ_DEFAULT_USER: root
+      RABBITMQ_DEFAULT_PASS: rootuser@9907
+      RABBITMQ_DEFAULT_VHOST: /
+      RMQ_HOST: rabbitmq
+      DB_HOST: mongo
     depends_on:
       rabbitmq:
         condition: service_healthy
@@ -87,6 +105,12 @@ services:
       dockerfile: Dockerfile.consumers.question
     container_name: question-consumer-2
     restart: always
+    environment:
+      RABBITMQ_DEFAULT_USER: root
+      RABBITMQ_DEFAULT_PASS: rootuser@9907
+      RABBITMQ_DEFAULT_VHOST: /
+      RMQ_HOST: rabbitmq
+      DB_HOST: mongo
     depends_on:
       rabbitmq:
         condition: service_healthy
