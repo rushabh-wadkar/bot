@@ -130,7 +130,7 @@ services:
       - questions_consumer2
       - logger_consumer
     ports:
-      - "8080:80"
+      - "80:80"
 
 volumes:
   # api-server-data:
