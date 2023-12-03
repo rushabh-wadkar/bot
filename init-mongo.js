@@ -15,5 +15,5 @@ db.createCollection("logs");
 db.createCollection("chats");
 
 // Create indexes
-db.chats.createIndex({ chat_from: 1 }, { unique: true });
-db.logs.createIndex({ id: 1 }, { unique: true });
+db.chats.createIndex({ chat_from: 1 });
+db.logs.createIndex({ id: 1 });
