@@ -1,0 +1,17 @@
+# Use an official Python runtime as a parent image
+FROM python:3.11.5
+
+# Set the working directory to /api-server
+WORKDIR /logger
+
+# Copy the current directory contents into the container at /consumers
+COPY . /logger
+
+# Install any needed packages specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Define environment variable
+ENV PYTHONUNBUFFERED=1
+
+# Run consumers when the container launches
+CMD ["python", "-m", "consumers.logger_consumer"]

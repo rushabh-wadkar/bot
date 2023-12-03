@@ -1,0 +1,7 @@
+__pycache__
+aienv
+secret.txt
+INSTALL.README
+notebooks
+
+consumers/secrets/*

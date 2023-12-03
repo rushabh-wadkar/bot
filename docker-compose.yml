@@ -1,0 +1,114 @@
+version: "3"
+
+services:
+  mongo:
+    image: mongo:5.0
+    container_name: mongo
+    ports:
+      - "27018:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: YqxT@0£eM>6£23!
+      MONGO_INITDB_DATABASE: admin
+    command: --auth
+    volumes:
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js
+      - mongodb_data:/data/db
+
+  rabbitmq:
+    image: rabbitmq:3.12-management
+    container_name: rabbitmq
+    ports:
+      - "5000:15672"
+      - "5672:5672"
+    environment:
+      RABBITMQ_DEFAULT_USER: root
+      RABBITMQ_DEFAULT_PASS: rootuser@9907
+      RABBITMQ_DEFAULT_VHOST: /
+      RMQ_HOST: rabbitmq
+      DB_HOST: mongo
+    volumes:
+      - rabbitmq-data:/var/lib/rabbitmq
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 30s
+      timeout: 30s
+      retries: 10
+
+  api-server1:
+    build:
+      context: .
+      dockerfile: Dockerfile.apiserver
+    container_name: api-server-1
+    restart: always
+    environment:
+      RMQ_HOST: rabbitmq
+      DB_HOST: mongo
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+  api-server2:
+    build:
+      context: .
+      dockerfile: Dockerfile.apiserver
+    container_name: api-server-2
+    restart: always
+    environment:
+      RMQ_HOST: rabbitmq
+      DB_HOST: mongo
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+  logger_consumer:
+    build:
+      context: .
+      dockerfile: Dockerfile.consumers.logger
+    container_name: logger_consumer
+    restart: always
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+  questions_consumer1:
+    build:
+      context: .
+      dockerfile: Dockerfile.consumers.question
+    container_name: question-consumer-1
+    restart: always
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+  questions_consumer2:
+    build:
+      context: .
+      dockerfile: Dockerfile.consumers.question
+    container_name: question-consumer-2
+    restart: always
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    container_name: nginx
+    restart: always
+    volumes:
+      - ./ui-frontend:/usr/share/nginx/html
+    depends_on:
+      - api-server1
+      - api-server2
+      - questions_consumer1
+      - questions_consumer2
+      - logger_consumer
+    ports:
+      - "8080:80"
+
+volumes:
+  # api-server-data:
+  rabbitmq-data:
+  mongodb_data:

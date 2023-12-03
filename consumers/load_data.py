@@ -1,0 +1,28 @@
+
+from langchain.document_loaders import DirectoryLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.embeddings import VertexAIEmbeddings
+from langchain.vectorstores import FAISS
+import constants
+import os
+
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = constants.MODEL_SECRET_FILEPATH
+
+
+def load_data():
+    print("Starting: " + os.environ['GOOGLE_APPLICATION_CREDENTIALS'])
+    embeddings = VertexAIEmbeddings()
+    ###### SAVE DATA #############
+    loader = DirectoryLoader(constants.MODEL_DATA_PATH)
+    documents = loader.load()
+    text_splitter = RecursiveCharacterTextSplitter(
+        chunk_size=constants.MODEL_BATCH_CHUNK_SIZE, chunk_overlap=constants.MODEL_CHUNK_OVERLAP)
+    docs = text_splitter.split_documents(documents)
+    knowledge_base = FAISS.from_documents(docs, embeddings)
+    knowledge_base.save_local(folder_path=constants.MODEL_DB_SAVE_PATH,
+                              index_name=constants.MODEL_DB_INDEX_NAME)
+    print("ended")
+
+
+if __name__ == "__main__":
+    load_data()
