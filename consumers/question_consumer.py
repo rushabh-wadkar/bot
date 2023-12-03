@@ -13,6 +13,7 @@ from langchain.llms import VertexAI
 from langchain.prompts import PromptTemplate
 import time
 import requests
+from langchain.memory import ConversationBufferMemory
 import pymongo
 
 logger = RMQLogger()
@@ -62,7 +63,7 @@ llm = VertexAI(
 
 template = """You are a female chatbot assistant for the MOTN (also known as Mother of Nation) festival. Your purpose is to provide warm and gentle responses strictly related to the MOTN festival. Please refrain from answering anything not related to the festival or its context. Use language detection to ensure you respond in the same language as the user's question. If the question is in Arabic, respond in Arabic; if it is in English, respond in English. If you don't know the answer, state that you don't know and do not provide unrelated information.
 
-If a question is not about the festival/event, politely inform the user that you are tuned to only answer questions about the MOTN festival. This is crucial for our startup.
+If a question is not about the festival/event, politely inform the user that you are tuned to only answer questions about the MOTN festival. This is crucial for our festival's success.
 
 {context}
 
@@ -71,6 +72,8 @@ User's Question: {question}
 
 PROMPT = PromptTemplate(template=template, input_variables=[
                         'context', 'question'])
+memory = ConversationBufferMemory(
+    memory_key="chat_history", return_messages=True)
 chat = RetrievalQA.from_chain_type(
     llm=llm, chain_type="stuff", retriever=retriever, verbose=constants.MODEL_VERBOSE, chain_type_kwargs={
         "prompt": PROMPT,
@@ -78,10 +81,10 @@ chat = RetrievalQA.from_chain_type(
     },)
 
 updated_db_index = None
-db2 = FAISS.from_texts(
-    ["Time required for the MARSHALL ride is 10mins."], embeddings)
-db.merge_from(db2)
-updated_db_index = db2.index_to_docstore_id[0]
+# db2 = FAISS.from_texts(
+#     ["Time required for the MARSHALL ride is 10mins."], embeddings)
+# db.merge_from(db2)
+# updated_db_index = db2.index_to_docstore_id[0]
 logger.info("Chat object ready to roll..")
 
 
@@ -123,7 +126,7 @@ def fetch_previous_questions(chat_from):
         return [document for document in cursor]
     except Exception as err:
         error_message = traceback.format_exc()
-        err = f'Error in fetch_previous_questions: {str(err)} Stack: {error_message} [Req: {req_data}]'
+        err = f'Error in fetch_previous_questions: {str(err)} Stack: {error_message}'
         logger.error(err)
     return []
 

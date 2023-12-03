@@ -143,6 +143,8 @@
           defaultColDef: {
             filter: "agTextColumnFilter",
             menuTabs: ["filterMenuTab"],
+            wrapText: true,
+            autoHeight: true,
           },
         };
 
@@ -154,7 +156,7 @@
           fetch("/api/logs?last_id=" + last)
             .then((response) => response.json())
             .then((data) => {
-              console.log(data);
+              // console.log(data);
               gridApi.applyTransaction({ add: data });
               // gridApi.setGridOption("rowData", data);
               if (data.length > 0) {
