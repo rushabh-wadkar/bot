@@ -16,7 +16,9 @@ def load_data():
     loader = PyPDFLoader(constants.MODEL_DATA_PATH + '/EventData.pdf')
 
     # split the document into chunks
-    pages = loader.load_and_split()
+    text_splitter = RecursiveCharacterTextSplitter(
+        chunk_size=constants.MODEL_BATCH_CHUNK_SIZE, chunk_overlap=constants.MODEL_CHUNK_OVERLAP)
+    pages = loader.load_and_split(text_splitter=text_splitter)
 
     embeddings = VertexAIEmbeddings()
 
