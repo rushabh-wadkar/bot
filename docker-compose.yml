@@ -115,6 +115,54 @@ services:
       rabbitmq:
         condition: service_healthy
 
+  questions_consumer3:
+    build:
+      context: .
+      dockerfile: Dockerfile.consumers.question
+    container_name: question-consumer-3
+    restart: always
+    environment:
+      RABBITMQ_DEFAULT_USER: root
+      RABBITMQ_DEFAULT_PASS: rootuser@9907
+      RABBITMQ_DEFAULT_VHOST: /
+      RMQ_HOST: rabbitmq
+      DB_HOST: mongo
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+  questions_consumer4:
+    build:
+      context: .
+      dockerfile: Dockerfile.consumers.question
+    container_name: question-consumer-4
+    restart: always
+    environment:
+      RABBITMQ_DEFAULT_USER: root
+      RABBITMQ_DEFAULT_PASS: rootuser@9907
+      RABBITMQ_DEFAULT_VHOST: /
+      RMQ_HOST: rabbitmq
+      DB_HOST: mongo
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+  questions_consumer5:
+    build:
+      context: .
+      dockerfile: Dockerfile.consumers.question
+    container_name: question-consumer-5
+    restart: always
+    environment:
+      RABBITMQ_DEFAULT_USER: root
+      RABBITMQ_DEFAULT_PASS: rootuser@9907
+      RABBITMQ_DEFAULT_VHOST: /
+      RMQ_HOST: rabbitmq
+      DB_HOST: mongo
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
   nginx:
     build:
       context: .
@@ -128,6 +176,9 @@ services:
       - api-server2
       - questions_consumer1
       - questions_consumer2
+      - questions_consumer3
+      - questions_consumer4
+      - questions_consumer5
       - logger_consumer
     ports:
       - "80:80"

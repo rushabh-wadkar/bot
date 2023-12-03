@@ -171,18 +171,17 @@ def handle_question_callback(ch, method, properties, body):
 
         model_response_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")
         total_processing_time = time.time() - fn_start_time
-        print(
-            f"[Question]: {question} ------> {response} ### [ Time: {total_processing_time}]")
+        # print(f"[Question]: {question} ------> {response} ### [ Time: {total_processing_time}]")
 
-        # url = f"https://graph.facebook.com/v12.0/{phone_number_id}/messages?access_token={constants.WHATSAPP_TOKEN}"
-        # payload = {
-        #     "messaging_product": "whatsapp",
-        #     "to": from_number,
-        #     "text": {"body": f"{response}"}
-        # }
-        # headers = {"Content-Type": "application/json"}
+        url = f"https://graph.facebook.com/v12.0/{phone_number_id}/messages?access_token={constants.WHATSAPP_TOKEN}"
+        payload = {
+            "messaging_product": "whatsapp",
+            "to": from_number,
+            "text": {"body": f"{response}"}
+        }
+        headers = {"Content-Type": "application/json"}
 
-        # http_response = requests.post(url, json=payload, headers=headers)
+        http_response = requests.post(url, json=payload, headers=headers)
 
         chats_collection.insert_one({
             "request_id": req_id,
@@ -200,7 +199,7 @@ def handle_question_callback(ch, method, properties, body):
         })
 
         ch.basic_ack(delivery_tag=method.delivery_tag)
-        # http_response.raise_for_status()
+        http_response.raise_for_status()
     except Exception as err:
         error_message = traceback.format_exc()
         err = f'Error in processing question: {str(err)} Stack: {error_message} [Req: {message}]'
