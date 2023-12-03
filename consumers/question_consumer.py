@@ -75,7 +75,7 @@ PROMPT = PromptTemplate(template=template, input_variables=[
 memory = ConversationBufferMemory(
     memory_key="chat_history", return_messages=True)
 chat = RetrievalQA.from_chain_type(
-    llm=llm, chain_type="stuff", retriever=retriever, verbose=constants.MODEL_VERBOSE, chain_type_kwargs={
+    llm=llm, chain_type="stuff", retriever=retriever, memory=memory, verbose=constants.MODEL_VERBOSE, chain_type_kwargs={
         "prompt": PROMPT,
         "verbose": constants.MODEL_VERBOSE
     },)
@@ -149,10 +149,11 @@ def handle_question_callback(ch, method, properties, body):
         chat_profile = message["webhook_msg"]["contact_info"]
         chat_entry_id = message["webhook_msg"]["entry_id"]
 
+        chat.memory.clear()
+        chat.memory.chat_memory.clear()
+
         if constants.FETCH_PREVIOUS_QUESTIONS:
             q_list = fetch_previous_questions(from_number)
-            chat.memory.clear()
-            chat.memory.chat_memory.clear()
 
             for question in q_list:
                 chat.memory.chat_memory.add_user_message(
