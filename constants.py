@@ -26,7 +26,7 @@ DB_TABLE_LOGS = 'logs'
 DB_TABLE_CHATS = 'chats'
 
 # Model
-MODEL_SECRET_FILEPATH = './consumers/secrets/advance-subject-398413-fab9315f43eb.json'
+MODEL_SECRET_FILEPATH = './consumers/secrets/aichatbot-406213-093638009277.json'
 MODEL_BATCH_CHUNK_SIZE = 1000
 MODEL_CHUNK_OVERLAP = 300
 MODEL_DATA_PATH = './consumers/data'
