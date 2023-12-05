@@ -67,6 +67,22 @@ services:
       rabbitmq:
         condition: service_healthy
 
+  api-server3:
+    build:
+      context: .
+      dockerfile: Dockerfile.apiserver
+    container_name: api-server-3
+    restart: always
+    environment:
+      RABBITMQ_DEFAULT_USER: root
+      RABBITMQ_DEFAULT_PASS: rootuser@9907
+      RABBITMQ_DEFAULT_VHOST: /
+      RMQ_HOST: rabbitmq
+      DB_HOST: mongo
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
   logger_consumer:
     build:
       context: .
@@ -163,6 +179,54 @@ services:
       rabbitmq:
         condition: service_healthy
 
+  questions_consumer6:
+    build:
+      context: .
+      dockerfile: Dockerfile.consumers.question
+    container_name: question-consumer-6
+    restart: always
+    environment:
+      RABBITMQ_DEFAULT_USER: root
+      RABBITMQ_DEFAULT_PASS: rootuser@9907
+      RABBITMQ_DEFAULT_VHOST: /
+      RMQ_HOST: rabbitmq
+      DB_HOST: mongo
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+  questions_consumer7:
+    build:
+      context: .
+      dockerfile: Dockerfile.consumers.question
+    container_name: question-consumer-7
+    restart: always
+    environment:
+      RABBITMQ_DEFAULT_USER: root
+      RABBITMQ_DEFAULT_PASS: rootuser@9907
+      RABBITMQ_DEFAULT_VHOST: /
+      RMQ_HOST: rabbitmq
+      DB_HOST: mongo
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+  questions_consumer8:
+    build:
+      context: .
+      dockerfile: Dockerfile.consumers.question
+    container_name: question-consumer-8
+    restart: always
+    environment:
+      RABBITMQ_DEFAULT_USER: root
+      RABBITMQ_DEFAULT_PASS: rootuser@9907
+      RABBITMQ_DEFAULT_VHOST: /
+      RMQ_HOST: rabbitmq
+      DB_HOST: mongo
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
   nginx:
     build:
       context: .
@@ -174,11 +238,15 @@ services:
     depends_on:
       - api-server1
       - api-server2
+      - api-server3
       - questions_consumer1
       - questions_consumer2
       - questions_consumer3
       - questions_consumer4
       - questions_consumer5
+      - questions_consumer6
+      - questions_consumer7
+      - questions_consumer8
       - logger_consumer
     ports:
       - "80:80"
