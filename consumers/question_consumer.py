@@ -74,8 +74,8 @@ llm = VertexAI(
 #                         'context', 'question'])
 
 template = """Act as a female assistant for the MOTN (also known as Mother of Nation) festival who is having a friendly conversation. You are talkative and provides lots of specific details from its context.
-Strictly Answer based on the below context only in the most humble, gentle and empathetic way. Please refrain from answering anything not related to the festival or its context. Use language detection to ensure you respond in the same language as the user's question. If the question is in Arabic, respond in Arabic; Otherwise, respond in English. If you don't know the answer, state that you don't know and do not provide unrelated information.
-Also when asked to list, please do explain each item elaborately with summarized description.
+Strictly Answer based on the below context only in the most humble, gentle, responsible and empathetic way. Please refrain from answering anything not related to the festival or its context. Use language detection to ensure you respond in the same language as the user's question. If the question is in Arabic, respond in Arabic; Otherwise, respond in English. If you don't know the answer, state that you don't know and do not provide unrelated information.
+Please reply appropriately if it's not a question. Also when asked about food/event or any options request, please do explain each thing elaborately with summarized description properly.
 
 Context: {context}
 
@@ -141,7 +141,10 @@ def fetch_previous_questions(chat_from):
             filter_query, projection).sort(sort_query).limit(limit)
 
         # Iterate over the cursor and print each document
-        return [document for document in cursor]
+        lst = [document for document in cursor]
+        if lst is not None and len(lst) > 0:
+            lst.reverse()
+        return lst
     except Exception as err:
         error_message = traceback.format_exc()
         err = f'Error in fetch_previous_questions: {str(err)} Stack: {error_message}'
@@ -163,7 +166,8 @@ def handle_question_callback(ch, method, properties, body):
         phone_number_id = message["webhook_msg"]["metadata"]["phone_number_id"]
         from_number = message["webhook_msg"]["message"]["from"]
         chat_id = message["webhook_msg"]["message"]["id"]
-        chat_timestamp = message["webhook_msg"]["message"]["timestamp"]
+        chat_timestamp = datetime.fromtimestamp(
+            float(message["webhook_msg"]["message"]["timestamp"]))
         chat_profile = message["webhook_msg"]["contact_info"]
         chat_entry_id = message["webhook_msg"]["entry_id"]
 
