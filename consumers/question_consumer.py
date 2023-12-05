@@ -14,6 +14,7 @@ from langchain.prompts import PromptTemplate
 import time
 import requests
 from langchain.memory import ConversationBufferMemory
+from langchain.chains import ConversationalRetrievalChain
 import pymongo
 
 logger = RMQLogger()
@@ -61,23 +62,41 @@ llm = VertexAI(
     verbose=constants.MODEL_VERBOSE
 )
 
-template = """You are a female chatbot assistant for the MOTN (also known as Mother of Nation) festival. Your purpose is to provide warm and gentle responses strictly related to the MOTN festival. Please refrain from answering anything not related to the festival or its context. Use language detection to ensure you respond in the same language as the user's question. If the question is in Arabic, respond in Arabic; Otherwise, respond in English. If you don't know the answer, state that you don't know and do not provide unrelated information.
-Always elaborate on your answer in two or three sentences based on the context if you find any relevant documents.
+# template = """You are a female chatbot assistant for the MOTN (also known as Mother of Nation) festival. Your purpose is to provide warm and gentle responses strictly related to the MOTN festival. Please refrain from answering anything not related to the festival or its context. Use language detection to ensure you respond in the same language as the user's question. If the question is in Arabic, respond in Arabic; Otherwise, respond in English. If you don't know the answer, state that you don't know and do not provide unrelated information.
+# Always elaborate on your answer in two or three sentences based on the context if you find any relevant documents.
+
+# Context: {context}
+
+# Question: {question}
+# # Helpful Answer:"""
+
+# PROMPT = PromptTemplate(template=template, input_variables=[
+#                         'context', 'question'])
+
+template = """Act as a female assistant for the MOTN (also known as Mother of Nation) festival who is having a friendly conversation. You are talkative and provides lots of specific details from its context.
+Strictly Answer based on the below context only in the most humble, gentle and empathetic way. Please refrain from answering anything not related to the festival or its context. Use language detection to ensure you respond in the same language as the user's question. If the question is in Arabic, respond in Arabic; Otherwise, respond in English. If you don't know the answer, state that you don't know and do not provide unrelated information.
+Also when asked to list, please do explain each item elaborately with summarized description.
 
 Context: {context}
 
-Question: {question}
-Helpful Answer:"""
+Current conversation:
+{chat_history}
+Human: {question}
+AI Assistant:"""
 
 PROMPT = PromptTemplate(template=template, input_variables=[
-                        'context', 'question'])
+                        'context', 'question', 'chat_history'])
+
 memory = ConversationBufferMemory(
-    memory_key="chat_history", return_messages=True)
-chat = RetrievalQA.from_chain_type(
-    llm=llm, chain_type="stuff", retriever=retriever, memory=memory, verbose=constants.MODEL_VERBOSE, chain_type_kwargs={
-        "prompt": PROMPT,
-        "verbose": constants.MODEL_VERBOSE
-    },)
+    memory_key="chat_history", ai_prefix="AI Assistant", return_messages=True)
+# chat = RetrievalQA.from_chain_type(
+#     llm=llm, chain_type="stuff", retriever=retriever, memory=memory, verbose=constants.MODEL_VERBOSE, chain_type_kwargs={
+#         "prompt": PROMPT,
+#         "verbose": constants.MODEL_VERBOSE
+#     },)
+
+chat = ConversationalRetrievalChain.from_llm(
+    llm, retriever, memory=memory, combine_docs_chain_kwargs={"prompt": PROMPT}, verbose=True)
 
 updated_db_index = None
 # db2 = FAISS.from_texts(
@@ -115,7 +134,7 @@ def fetch_previous_questions(chat_from):
         filter_query = {"chat_from": chat_from}
         projection = {"_id": 0, "chat_question": 1, "chat_answer": 1}
         sort_query = [("chat_timestamp", -1)]
-        limit = 5
+        limit = 10
 
         # Execute the query
         cursor = chats_collection.find(
@@ -160,7 +179,7 @@ def handle_question_callback(ch, method, properties, body):
                 chat.memory.chat_memory.add_ai_message(
                     message=item["chat_answer"])
 
-        result = chat({"query": question})
+        result = chat({"question": question})
         response = result["result"]
         # TODO: Process and sanitize the response from model
         if response == None or response == "" or len(response) == 0:
@@ -169,8 +188,8 @@ def handle_question_callback(ch, method, properties, body):
             response = response[len("Answer:"):]
 
         response = response.strip()
-        response = response.replace("\n", ".")
-        response = response.replace("\t", " ")
+        # response = response.replace("\n", ".")
+        # response = response.replace("\t", " ")
 
         model_response_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")
         total_processing_time = time.time() - fn_start_time
