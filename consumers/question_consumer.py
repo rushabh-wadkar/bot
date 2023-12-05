@@ -179,9 +179,8 @@ def handle_question_callback(ch, method, properties, body):
                 chat.memory.chat_memory.add_ai_message(
                     message=item["chat_answer"])
 
-        result = chat({"question": question})
-        response = result["result"]
-        # TODO: Process and sanitize the response from model
+        result = chat({"question": question}, return_only_outputs=True)
+        response = result["answer"]
         if response == None or response == "" or len(response) == 0:
             response = "I'm sorry, I couldn't generate a response at the moment. Please feel free to ask something else or try again later."
         elif response.startswith("Answer:"):
