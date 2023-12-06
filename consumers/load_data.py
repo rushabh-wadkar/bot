@@ -20,8 +20,7 @@ def load_data():
         chunk_size=constants.MODEL_BATCH_CHUNK_SIZE, chunk_overlap=constants.MODEL_CHUNK_OVERLAP)
     pages = loader.load_and_split(text_splitter=text_splitter)
 
-    embeddings = VertexAIEmbeddings(
-        model_name="textembedding-gecko-multilingual@001")
+    embeddings = VertexAIEmbeddings()
 
     # Use Langchain to create the embeddings using text-embedding-ada-002
     db = FAISS.from_documents(documents=pages, embedding=embeddings)

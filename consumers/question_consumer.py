@@ -49,7 +49,7 @@ channel.queue_bind(exchange=constants.MODEL_CONFIG_EXCHANGE, queue=queue_name)
 
 
 ###### LOAD DATA #############
-embeddings = VertexAIEmbeddings(model_name="textembedding-gecko-multilingual")
+embeddings = VertexAIEmbeddings()
 db = FAISS.load_local(folder_path=constants.MODEL_DB_SAVE_PATH,
                       embeddings=embeddings, index_name=constants.MODEL_DB_INDEX_NAME)
 retriever = db.as_retriever(search_type=constants.MODEL_SEARCH_TYPE, search_kwargs={
