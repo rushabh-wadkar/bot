@@ -49,7 +49,7 @@ channel.queue_bind(exchange=constants.MODEL_CONFIG_EXCHANGE, queue=queue_name)
 
 
 ###### LOAD DATA #############
-embeddings = VertexAIEmbeddings()
+embeddings = VertexAIEmbeddings(model_name="textembedding-gecko-multilingual")
 db = FAISS.load_local(folder_path=constants.MODEL_DB_SAVE_PATH,
                       embeddings=embeddings, index_name=constants.MODEL_DB_INDEX_NAME)
 retriever = db.as_retriever(search_type=constants.MODEL_SEARCH_TYPE, search_kwargs={
@@ -73,11 +73,20 @@ llm = VertexAI(
 # PROMPT = PromptTemplate(template=template, input_variables=[
 #                         'context', 'question'])
 
-template = """Act as a female assistant for the MOTN (also known as Mother of Nation) festival who is having a friendly conversation. You are talkative and provides lots of specific details from its context.
-Strictly Answer based on the below context only in the most humble, gentle, responsible and empathetic way. Please refrain from answering anything not related to the festival or its context. Use language detection to ensure you respond in the same language as the user's question. If the question is in Arabic, respond in Arabic; Otherwise, respond in English. If you don't know the answer, state that you don't know and do not provide unrelated information.
-Please reply appropriately if it's not a question. Also when asked about food/event or any options request, please do explain each thing elaborately with summarized description properly.
+# template = """Act as a female assistant for the MOTN (also known as Mother of Nation) festival who is having a friendly conversation. Use language detection to ensure you respond in the same language as the user's question. If the question is in Arabic, respond in Arabic; Otherwise, respond in English. Please refrain from answering anything not related to the festival or its context.  If you don't know the answer, state that you don't know and do not provide unrelated information.
+# Strictly Answer based on the below context only in the most humble, gentle, responsible and empathetic way.
 
-Context: {context}
+# Context: {context}
+
+# Current conversation:
+# {chat_history}
+# Human: {question}
+# AI Assistant:"""
+
+template = """You are a female chatbot assistant for the MOTN (also known as Mother of Nation) festival. Your purpose is to provide warm and gentle responses strictly related to the MOTN festival. Please refrain from answering anything not related to the festival or its context.If you don't know the answer, state that you don't know and do not provide unrelated information.
+Strictly respond in the user asked language only. If a question is not about the festival/event, politely inform the user that you are tuned to only answer questions about the MOTN festival. If you find an answer, Please provide a detailed response.
+
+{context}
 
 Current conversation:
 {chat_history}
@@ -96,7 +105,7 @@ memory = ConversationBufferMemory(
 #     },)
 
 chat = ConversationalRetrievalChain.from_llm(
-    llm, retriever, memory=memory, combine_docs_chain_kwargs={"prompt": PROMPT}, verbose=True)
+    llm, retriever, memory=memory, combine_docs_chain_kwargs={"prompt": PROMPT}, verbose=constants.MODEL_VERBOSE)
 
 updated_db_index = None
 # db2 = FAISS.from_texts(
