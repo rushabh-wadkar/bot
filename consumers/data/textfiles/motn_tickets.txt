@@ -1,0 +1,41 @@
+Ticket Price information for MOTN festival (More information can be found at https://www.motn.ae/en/auh/tickets)
+
+1. General Admission:
+    - Online Price: 30AED
+    - Door Price: 35AED
+    - Ages: 4-59 Years
+    - Type: General Admission
+    - Description: This gives you access to the festival grounds, the food vendors, and the shopping experiences.
+
+2. MOTN Day Pass
+    - Online Price: 150AED
+    - Door Price: 150AED
+    - Ages: All Ages
+    - Type: DAY PASS
+    - Description: "This gives you access to everything in MOTN, including rides and unique experiences, except the Monster Inflatable and Entertain Arena concerts.(Show capacity is limited and will be on a first come first served basis.)
+
+3. MOTN + Monster Inflatable Day Pass
+    - Online Price: 180AED
+    - Door Price: 180AED
+    - Ages: All Ages 
+    - Type: DAY PASS
+    - Description: "This gives you access to everything in MOTN, including rides, unique experiences, and the Monster Inflatable, except Entertain Arena concerts (Show capacity is limited and will be on a first come first served basis.)
+
+4. MOTN Friends & Family Offer
+    - Online Price: 540AED
+    - Door Price: 540AED
+    - Ages: All Ages
+    - Type: Package Pass
+    - Description: Buy 3 MOTN + Monster Inflatable Day Passes, get one free.
+
+5. MOTN Full Season Pass 
+    - Online Price: 495AED
+    - Door Price: 495AED
+    - Ages: All Ages 
+    - Type: SEASON PASS
+    - Description: Visit the festival whenever you want, as often as you want, with all access to everything, including the Monster Inflatable, except Entertain Arena concerts.
+
+
+#####
+
+

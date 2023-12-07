@@ -52,6 +52,7 @@ channel.queue_bind(exchange=constants.MODEL_CONFIG_EXCHANGE, queue=queue_name)
 embeddings = VertexAIEmbeddings()
 db = FAISS.load_local(folder_path=constants.MODEL_DB_SAVE_PATH,
                       embeddings=embeddings, index_name=constants.MODEL_DB_INDEX_NAME)
+
 retriever = db.as_retriever(search_type=constants.MODEL_SEARCH_TYPE, search_kwargs={
                             "k": constants.MODEL_SEARCH_K})
 
@@ -59,8 +60,14 @@ llm = VertexAI(
     model_name=constants.MODEL_NAME,
     max_output_tokens=constants.MODEL_MAX_OUTPUT_TOKEN,
     temperature=constants.MODEL_TEMPERATURE,
-    verbose=constants.MODEL_VERBOSE
 )
+
+# llm = VertexAI(
+#     model_name=constants.MODEL_NAME,
+#     max_output_tokens=constants.MODEL_MAX_OUTPUT_TOKEN,
+#     temperature=constants.MODEL_TEMPERATURE,
+#     verbose=constants.MODEL_VERBOSE
+# )
 
 # template = """You are a female chatbot assistant for the MOTN (also known as Mother of Nation) festival. Your purpose is to provide warm and gentle responses strictly related to the MOTN festival. Please refrain from answering anything not related to the festival or its context. Use language detection to ensure you respond in the same language as the user's question. If the question is in Arabic, respond in Arabic; Otherwise, respond in English. If you don't know the answer, state that you don't know and do not provide unrelated information.
 # Always elaborate on your answer in two or three sentences based on the context if you find any relevant documents.
@@ -83,9 +90,17 @@ llm = VertexAI(
 # Human: {question}
 # AI Assistant:"""
 
-template = """You are a female chatbot assistant for the MOTN (also known as Mother of Nation) festival. Your purpose is to provide warm and gentle responses strictly related to the MOTN festival. Please refrain from answering anything not related to the festival or its context.If you don't know the answer, state that you don't know and do not provide unrelated information.
-Strictly respond in the user asked language only. If a question is not about the festival/event, politely inform the user that you are tuned to only answer questions about the MOTN festival. If you find an answer, Please provide a detailed response.
+# template = """You are a female chatbot assistant for the MOTN (also known as Mother of Nation) festival. Your purpose is to provide warm and gentle responses strictly related to the MOTN festival. Please refrain from answering anything not related to the festival or its context.If you don't know the answer, state that you don't know and do not provide unrelated information.
+# Strictly respond in the user asked language only. If a question is not about the festival/event, politely inform the user that you are tuned to only answer questions about the MOTN festival. If you find an answer, Please provide a detailed response.
 
+# {context}
+
+# Current conversation:
+# {chat_history}
+# Human: {question}
+# AI Assistant:"""
+
+template = """You are a female chatbot assistant for the MOTN festival (Also known as Mother of Nation).You are having a friendly conversation with a potential customer who wants to know more about MOTN festival.If a question is asked out of context, please warmly suggest that you can answer questions only about MOTN festival.If you don't know the answer, please apologize and state that you do not know.You should strictly answer based on the context below.
 {context}
 
 Current conversation:

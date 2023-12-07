@@ -1,0 +1,46 @@
+Below is the list of all the food hubs/food places/food stalls at thrill zone:
+
+1. Bad Boy Pizza Society
+    - Type: International food Vendor
+    - Description: "In the heart of Southampton, a group of like-minded pizza aficionados at the city's university came together to form what would become the legendary 'Bad Boy Pizza Society.' What began as a shared passion for pizza soon evolved into something extraordinary. Fueled by their love for the perfect slice, they embarked on a journey that has left an indelible mark on the culinary world., Our story traces back to the early days when Bad Boy Pizza Society emerged from the vibrant Southampton University campus. This society of pizza enthusiasts wasn't content with merely savouring the delightful flavours of their favourite pie – they aspired to master the art of pizza-making. To realize this dream, they embarked on thrilling expeditions to Naples and Rome, the birthplaces of pizza. There, they learned the secrets and traditions behind crafting the perfect pizza, infusing their creations with authenticity and passion., At the helm of this culinary adventure were four visionary co-founders who shared a deep commitment to their craft. Their combined expertise and unwavering dedication laid the foundation for what would become a pizza sensation., One of the crowning achievements of Bad Boy Pizza Society is the national recognition they received, having claimed the prestigious title of 'National Pizza of the Year' in the previous year. This accolade stands as a testament to their unwavering pursuit of pizza perfection and the creativity that they infuse into every slice., Bad Boy Pizza Society is renowned for its New York style pizza, which blends tradition and innovation in every bite. The distinctively thin and foldable crust, generous toppings, and signature sauce are a testament to the society's commitment to crafting the ultimate pizza experience., But what truly sets Bad Boy Pizza Society apart is their commitment to bringing a unique concept to each of their locations. Whether it's the vibrant ambiance, innovative toppings, or creative collaborations, every site offers a one-of-a-kind experience that keeps their customers coming back for more., In summary, Bad Boy Pizza Society is more than just a pizzeria; it's a pizza culture that was born from the heart of a university society, fueled by passion and knowledge, and dedicated to creating exceptional New York style pizza experiences that are both authentic and innovative."
+    - Keywords:"Bad Boy Pizza Society, Pizzeria, Pizza culture, University society, Passion, Knowledge, New York style pizza"
+
+2. Mother Flipper
+    - Type: International Food Vendor
+    - Description: "Mother Flipper has maintained a solid consistency as one of the best burgers in London without having to resort to pandering to trends or gimmicks since 2012. By sticking to its stalls at various markets and street food sites it has become extremely sought after and its limited availability means people wait in extremely long ques to get the chance to try their burgers. It's become such a hot burger joint that it will be soon opening it first brick and mortar restaurant."
+    - Keywords: "Best burgers, London, Stalls, Various markets, Street food sites"
+
+3. Crosstown
+    - Type: International Food Vendor
+    - Description: "Crosstown produce handmade luxury sourdough doughnuts, ice cream & specialty coffee. They created a signature hybrid sourdough – the world’s first yeast-raised sourdough base that they have become renowned for. They pride themselves on bringing together interesting, complimentary ingredients from around the world from season to season, to satisfy tastebuds all day and all year round."
+    - Keywords: "Handmade, Luxury sourdough doughnuts, Ice cream, Specialty coffee"
+
+4. G.O.A.T
+    - Type: Local Vendor
+    - Description: G.O.A.T. brings to you homegrown Dubai burgers. Taste the Greatest Of All Time!
+    - Keywords:"G.O.A.T. Homegrown Dubai burgers Greatest Of All Time"
+
+5. Fritz Belgian Fries 
+    - Type: Local Vendor
+    - Description: We are fritz the fries experts. Known as the best belgina fries in UAE, we serve only the top quality original belgian fries topped with our special toppings and sauces. 
+    - Keywords: "Fritz, Fries experts, Best Belgian fries"
+
+6. Milky Ice 
+    - Type: Local Vendor
+    - Description: "MILKY ICE CREAM IS POLISH-EMIRATI BRAND - THE MOST MILKY ICE CREAM YOU HAVE EVER TRY ! STAY MILKY !"
+    - Keywords: "Milky Ice Cream, Polish-Emirati brand, Unique, Try, Stay Milky"
+
+7. Wake n Bake 
+    - Type: Local Vendor
+    - Description: "A pâtisserie and all day dining space located at Mamsha Saadiyat, wake n bake is owned by Emirati Chef, Fatima Al Sayegh. After being trained in one of the worlds most renowned cooking schools, Le Cordon Bleu in London, Sayegh uses the finest ingredients with the most articulate methods of creating her dishes. Beginning as a home-based business in 2018, the passion fueled chef, brought her vision to life through testing her dishes within the community and hosting pop ups, which is where the infamous ‘wake n bake donuts’ became the main USP of the brand. 4 years later, wake n bake turned it’s home business into a physical space at Mamsha Saadiyat, creating a comfortable, contemporary space serving sweet treats and an all day dining menu."
+    - Keywords: "Wake n Bake, All-day eatery, Specialized bakery, Contemporary space, Sweet treats, All-day dining"
+
+8. Let's PopCorn 
+    - Type: Local Vendor
+    - Description: "Let’s Popcorn; the 1st regional Gourmet Popcorn brand since 11/11/11 with an exclusive 50+ unique and exclusive flavors. American Quality, is locally prepared with its own secret recipe, and most important; it is committed to the best value of each popcorn kernel, the highest quality ingredients, and the healthiest cooking method. From Kuwait, the Brand was franchised in all GCC countries, in addition to Egypt, Lebanon, and Germany. All Let’s Popcorn (LP) flavors are air-popped, which maintains the maximum nutrition facts for each popcorn kernel, in addition to being a fresh, non-GMO, Diet Friendly, and healthy snack for all ages to be consumed all day long."
+    - Keywords: "Let’s Popcorn, Regional Gourmet Popcorn brand, 50+ unique flavors, Secret recipe, American quality, GCC countries, Egypt, Lebanon, Germany, Air-popped snacks, Non-GMO, Healthy treat"
+
+9. Khameer and Chebab
+    - Type: Local Vendor
+    - Description: Khemeer & Chebab reflects the heritage and traditional Emirati cuisine, where flavours of authentic history blend with the creativity of the present. Their traditional cuisine is characterised by the delicious and distinctive dishes of the Emirati people inherited from ancestors, distinguished by generosity.
+    - Keywords: "Khemeer & Chebab, Emirati cuisine, Heritage, Traditional, Flavours, Authentic history, Present, Generosity"

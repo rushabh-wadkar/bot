@@ -1,0 +1,226 @@
+**List of Food Stalls/Shops/Hubs at Indulge Zone:**
+
+1. Botik
+    - Type: Retail Vendor
+    - Description: "Bo-Tik focuses on fashion and accessories, showcasing the creativity and craftsmanship of local and regional brands. With a curated selection of 40 brands over the 24 days, the aim is to create an immersive shopping experience that reflects the festival's spirit and style. From elegant couture to trendy accessories, visitors will have the opportunity to explore a diverse range of fashion offerings, supporting and promoting the talents of emerging designers."
+    - Speciality Keywords: "Bo-Tik, Fashion, Accessories, Local Brands, Regional Brands, Creativity, Craftsmanship, Curated Selection, Immersive Shopping Experience, Festival Spirit, Festival Style, Elegant Couture, Trendy Accessories, Diverse Fashion Offerings, Emerging Designers, Fashion Showcase, Supporting Talents, Promoting Designers"
+
+2. Pointless Acts
+    - Type: Retail Vendor
+    - Description: Streetwear brand focusing on socks
+    - Speciality Keywords: "Streetwear, Socks"
+
+3. From The Arabs
+    - Type: Retail Vendor
+    - Description: From The Arabs is a home fragrance brand that was created to reinvigorate Emirati culture with scents. Infusing traditional scents usually found in Emirati homes in the forms of bikhor and incense with candles. Tapping into the field of Arabic flavors in a way that has never been done before
+    - Speciality Keywords: "From The Arabs, Home Fragrance Brand, Reinvigorate Emirati Culture, Scents, Traditional Scents, Bikhor, Incense, Candles, Arabic Flavors, Emirati Homes, Cultural Revitalization, Innovative Approach, Unique Scent Infusion, Aromatherapy, Fragrance Creation, Cultural Heritage, New Fragrance Experience, Aromatic Blend, Unprecedented Field Entry, Scent Exploration"
+
+4. Flow Fit
+    - Type: Retail Vendor
+    - Description: Flow Fit is a local Emirati women's activewear brand, dedicated to size inclusivity and unwavering support for every woman's unique body. We celebrate diversity by offering a range of stylish and functional designs, ensuring that every piece is crafted to embrace and enhance all body shapes. Our commitment to inclusivity extends beyond sizes; it's a celebration of confidence, strength, and individuality. Experience unparalleled comfort and support in each garment, tailored to empower you during every workout.
+    - Speciality Keywords: "Flow Fit, Local Emirati Women's Activewear, Size Inclusivity, Women's Body Support, Diversity Celebration, Stylish Designs, Functional Activewear, Body Shape Embrace, Inclusive Fashion, Confidence Celebration, Strength, Individuality, Comfort, Supportive Designs, Empowerment, Workout Apparel, Unparalleled Comfort, Tailored Garments, Women's Fitness Wear, Emirati Fashion"
+
+5. Oud Cady
+    - Type: Retail Vendor
+    - Description: Oud Cady is a boutique local brand that creates unique, premium, and curated scents we offer many luxury products such as PERFUMES All Our Perfumes are creation ALL OVER SPRAY for Body & Hair CANDLES with unique scents of bakhoor DIFFUSERS with creation scents All Creation by Local Team
+    - Speciality Keywords: "Oud Cady, Boutique Local Brand, Unique Scents, Premium Products, Curated Scents, Luxury Perfumes, All-Over Spray, Body & Hair Fragrance, Scented Candles, Bakhoor-inspired Scents, Diffusers, Local Creation, Local Team, Fragrance Creation, Exclusive Perfume Line, Premium Fragrance Products, Scented Luxury Items, Aromatic Offerings, Boutique Perfumery, Unique Scented Creations"
+
+6. Spindle
+    - Type: Retail Vendor
+    - Description: Spindle is a women's modest clothing brand based in Abu Dhabi. We make abayas and dresses for the modern Emirati women using the highest quality fabrics. Spindle celebrates the diversity of women's bodies, ensuring that every woman, regardless of her size or shape, could find pieces that complimented her in all the right ways. We aim to inspire women to feel beautiful, confident, and empowered in every aspect of their lives.
+    - Speciality Keywords: "Spindle, Women's Modest Clothing, Abu Dhabi-Based Brand, Abayas, Dresses, Modern Emirati Women, High-Quality Fabrics, Body Diversity Celebration, Size-Inclusive Designs, Complimentary Pieces, Empowerment Through Fashion, Beauty Inspiration, Confidence Boost, Women's Empowerment, Fashion Empowerment, Emirati Fashion, Modest Fashion, Body Positivity, Contemporary Abayas, Style for Every Woman"
+
+7. My Little Birdy
+    - Type: Retail Vendor
+    - Description: Emirati brand that offers traditional and elite ready to wear jalabeya’s for girls and adults.
+    - Speciality Keywords: "Emirati Brand, Traditional Jalabeya, Elite Ready-to-Wear, Girls' Clothing, Adult Jalabeyas, Traditional Attire, Elite Fashion, Ready-to-Wear Fashion, Traditional Clothing, Emirati Fashion, Cultural Attire, Ready-made Jalabeyas, Traditional Elegance, Fashion for All Ages, Elite Wardrobe, Girls and Adults Fashion, Cultural Wear, Emirati Style, Jalabeya Collection, Traditional Elegance"
+
+8. Fashion Jardim
+    - Type: Retail Vendor
+    - Description: Fashion Jardim is a Brand Distributor and Retailer specializing in exclusive Brazilian beachwear, resort, and ready-to-wear fashion. Our extensive catalog includes everything from stunning ready-to-wear and beachwear to fashionable bags and accessories. Only the best in Brazilian quality and design.
+    - Speciality Keywords: "Fashion Jardim, Brand Distributor, Retailer, Brazilian Beachwear, Resort Fashion, Ready-to-Wear, Exclusive Fashion, Extensive Catalog, Stunning Ready-to-Wear, Beachwear Collection, Fashionable Bags, Accessories, Brazilian Quality, Brazilian Design, Exclusive Fashion, Resort Wear, Fashion Distribution, High-Quality Fashion, Brazilian Style, Fashion Jardim Collection"
+
+9. Boo Stores
+    - Type: Retail Vendor
+    - Description: THE BRAND "BOO" HAS BEEN CREATED FOR EVERYONE TO FEEL BEAUTIFUL, ELEGANT AND COMFORTABLE. WE HAVE NO AGE LIMIT. OUR FOCUS IS QUALITY AND CONVENIENCE. WE HOPE THAT OUR PIECES STAND ALONG YOUR JOURNEY, KEEPING YOU STRONG AND CONFIDENT
+    - Speciality Keywords: "Boo Brand, Inclusive Fashion, Beauty, Elegance, Comfort, Quality Focus, Convenience, Timeless Style, Journey Companion, Strength, Confidence, Beautiful Fashion, Elegant Designs, Comfortable Pieces, Inclusive Clothing, Quality Garments, Confidence Boosting, Journey-Focused Brand, Stylish Comfort, Boo Collection"
+
+10. Ekleel Handicrafts
+    - Type: Retail Vendor
+    - Description: home project that is interested in displaying handcrafted products and stationery, that we continued developing to suit different tastes and age groups, and that would be compatible with personal use, or gifting to loved ones.
+    - Speciality Keywords: "Home Project, Handcrafted Products, Stationery, Development, Customization, Different Tastes, Age Groups, Compatibility, Personal Use, Gifting, Artisan Creations, Unique Designs, Home Decor, Handmade Items, Tailored Products, Artistic Displays, Personalized Gifts, Thoughtful Gifting, Diverse Age Appeal, Crafted Stationery"
+
+11. Foux
+    - Type: Retail Vendor
+    - Description: Vegan and sustainable handbag brand created by 2 architects from lebanon
+    - Speciality Keywords: "Vegan Handbag Brand, Sustainable Fashion, Handbag Designers, Lebanon, Architects, Ethical Fashion, Eco-Friendly Accessories, Vegan Leather, Sustainable Practices, Architectural Influence, Conscious Fashion, Lebanon-based Brand, Eco-Friendly Handbags, Design Innovation, Sustainable Style, Vegan Fashion, Architectural Creativity, Ethical Designers, Lebanese Craftsmanship, Green Fashion"
+
+12. Mahari
+    - Type: Retail Vendor
+    - Description: We offer 18K Gold plated jewelry, waterproof and tarnish free. It is long lasting and affordably priced that comes in a cute packaging perfect for a gift to the self or a loved one. We don't have any physical store and events are a big success because it allows our customers to try our products.
+    - Speciality Keywords: "8K Gold Plated Jewelry, Waterproof, Tarnish-Free, Long-Lasting, Affordable Pricing, Cute Packaging, Gift Options, Product Testing, Self-Gifting, Gift for Loved Ones, Quality Materials, Stylish Designs, Event Success, Try-Before-Buy, Exclusive Packaging, Gold-plated Accessories"
+
+13. Jokes Aside
+    - Type: Retail Vendor
+    - Description: Jokes Aside is a UAE based streetwear brand that embraces self expression through transforming real life stories into wearable art
+    - Speciality Keywords: "Jokes Aside, UAE-Based Streetwear Brand, Self Expression, Wearable Art, Real Life Stories, Street Fashion, Embracing Creativity, Urban Style, Artistic Transformation, Fashion Brand, UAE Streetwear, Personal Expression, Creative Designs, Wearable Narratives, Street Style, Artistic Streetwear, Cultural Expression, Fashionable Storytelling, Unique Apparel, Urban Self-Expression"
+
+14. Razbel
+    - Type: Retail Vendor
+    - Description: Razbel was created to express the certain psychologies and moments. Where certain facts kill a part of that excitement. To find that fulfilment or exposure. Our products reflect on human relatability. All Products are proudly manufactured in the UAE and has represented itself internationally.
+    - Speciality Keywords: "Razbel, Expressive Brand, Certain Psychologies, Moments, Emotional Expression, Excitement, Fulfillment, Human Relatability, UAE Manufactured, International Representation, Emotional Exploration, Unique Moments, Creative Products, Psychological Expression, Relatable Designs, Cultural Representation, Global Presence, Emotional Fulfillment, Human Experience, Internationally Acclaimed"
+
+15. MQ Perfumes
+    - Type: Retail Vendor
+    - Description: MQ Perfumes is a boutique fragrance house with a deep- rooted passion for the art of perfumery. This early fascination evolved into a lifelong passion. Our journey led us to the romantic city of Paris, where we began to seek out and uncover the world's most unique and captivating scents. Founded in 2016, MQ Perfumes has since become a hallmark of exquisite, handcrafted perfumes that carry with them the essence of our global adventures and experiences. we create niche perfumes that are unmistakably unique. When you experience an MQ fragrance, you are transported to the very location that inspired it. Our perfumes are not just scents; they are stories, memories, and a piece of the world captured in a bottle.
+    - Speciality Keywords: "MQ Perfumes, Boutique Fragrance House, Art of Perfumery, Passionate Creators, Lifelong Passion, Parisian Journey, Unique Scents, Founded in 2016, Exquisite Perfumes, Handcrafted Fragrances, Global Adventures, Niche Perfumes, Unmistakably Unique, Scented Stories, Essence of Experiences, Fragrance Exploration, Captivating Scents, Aromatic Memories, Location-Inspired, Worldly Essence in a Bottle"
+
+16. Fennec Perfumes
+    - Type: Retail Vendor
+    - Description: Fenec is an Emirati brand* established in 2021 that has taken the Fenec or the Desert Fox as its symbol, The house releases a collection of various beautiful perfumes, as well as a hair and body mist, dukhoon, a home diffuser, home dispenser, we challenge to use niche based oil with very high quality and fairly priced with Creative and unique branding.
+    - Speciality Keywords: "Fenec, Emirati Brand, Established in 2021, Symbol: Fenec or Desert Fox, Perfume Collection, Hair and Body Mist, Dukhoon (Incense), Home Diffuser, Home Dispenser, Niche-based Oil, High-Quality Products, Fair Pricing, Creative Branding, Unique Fragrances, Emirati Symbolism, Fragrance Innovation, Aromatic Collections, Artistic Packaging, Creative Marketing, Quality Emirati Products"
+
+17. Calf
+    - Type: Retail Vendor
+    - Description: Calf is an Emirati brand that offers traditional attire, specializing in pre-walker and toddler sandals, proudly designed and made in the UAE. Calf launched in 2019 as a small business on instagram by a mother in search of high quality traditional Emirati sandals that fit her tiny baby's feet. Asking around, she discovered a lack in the market, even though there was a high demand by mothers looking to dress up their babies for occasions.
+    - Speciality Keywords: "Calf, Emirati Brand, Traditional Attire, Pre-Walker Sandals, Toddler Sandals, Designed and Made in the UAE, Instagram Business, Launched in 2019, Mother-Founded, High-Quality Sandals, Traditional Emirati Footwear, Small Business Success, Mother's Initiative, Local Design, Baby-Friendly Sandals, Occasion Dressing, Market Gap Discovery, Demand for Baby Fashion, Emirati Craftsmanship, Tiny Feet Fashion"
+
+18. Fae Oud & Perfumes
+    - Type: Retail Vendor
+    - Description: The story behind FAE OUD & PERFUMES starts with the Falcon; the UAE’s national bird which symbolizes elegance, success, and persistence to continuously rise above challenges. While training this magnificent bird of prey, to stay locked on its goal, the shadow of its prey is used as the focal point. That’s us; FAE- meaning “shadow” in Arabic, we set our eyes on the goal of being on top of redefining luxury perfume. The world of FAE OUD & PERFUMES was inspired by the nature and motion of the waves, and different shades of the sea. We believe that stories are told through the playful dances of the waves across the buoyant breezes and warm sunlight rays.
+    - Speciality Keywords: "FAE OUD & PERFUMES, Falcon, UAE national bird, Elegance, Success, Persistence, Challenges, Training, Bird of prey, Shadow, FAE (meaning ""shadow"" in Arabic), Luxury perfume, Nature, Motion of waves, Shades of the sea, Stories, Playful dances, Breezes, Sunlight rays, Redefining"
+
+19. HypeHouse
+    - Type: Retail Vendor
+    - Description: We provide a wide range of items like sneakers, vintage tees, football jerseys, collectables, sneaker customization, t-shirt printing, branded tees.
+    - Speciality Keywords: "Sneakers, Vintage tees, Football jerseys, Collectables, Sneaker customization, T-shirt printing, Branded tees"
+
+20. Swey
+    - Type: Retail Vendor
+    - Description: SWEY is a UAE based eyewear brand inspired by the region's new wave of creative expression. Founded in 2021, the brand pushes boundaries with a disruptive and innovative attitude. SWEY depicts culture through a unique lens while showcasing a modern perspective on quality eyewear.
+    - Speciality Keywords: "SWEY, UAE-based eyewear brand, Creative expression, Pushes boundaries, Disruptive, Innovative attitude, Culture, Unique lens, Modern perspective, Quality eyewear"
+
+21. Socks Up
+    - Type: Retail Vendor
+    - Description: Discover Socks Up, an Emirati brand specializing in stylish and comfortable socks. Find us near Fox Cinema and explore our wide range of high-quality socks. You can also shop our products conveniently on our website. Elevate your style and comfort with Socks Up.
+    - Speciality Keywords: "Socks Up, Emirati brand, Stylish, Comfortable socks, Fox Cinema, High-quality, Wide range, Website, Shop, Elevate, Style, Comfort"
+
+22. AllOver
+    - Type: Retail Vendor
+    - Description: ALL OVER WAS BORN FROM A PASSION THAT WAS INSTILLED IN ME FROM MY MOTHER. I STARTED ALL OVER AROUND 5 YEARS AGO, BUT THE TRUTH IS, THE HISTORY OF THE BRAND GOES WAY BACK TO 20 YEARS AGO, WHERE EVEN RAW MATERIALS WERE EXTREMELY DIFFICULT TO FIND AT THE TIME. EVERYTHING WE DO IS INSPIRED BY HER BOOKS & RECIPES. I STARTED ALL OVER BECAUSE I WANTED TO CONTINUE MY MOTHER’S LEGACY - AND FROM MY LOVE FOR FRAGRANCES. I DON’T LIKE PLACES THAT AREN’T FRAGRANCED, OR HAVE NO DISTINCT SCENT TO THEM. I ALWAYS LOVE MY SURROUNDINGS SMELLING GOOD. ALL OVER AIMS TO FRAGRANCE UP YOUR SPACE, AND MAKE THE SCENT SPREAD ALL OVER YOUR HOME. `we Weill be launching new exciting products especially for MOTN
+    - Speciality Keywords: "Inspired Books Recipes, Legacy, Love for fragrances, Fragranced spaces, Scent, Home"
+
+23. Hala
+    - Type: Retail Vendor
+    - Description: HALA is a women's ready-to-wear brand, proudly designed and manufactured in Dubai for the modern woman
+    - Speciality Keywords: "HALA, Women's ready-to-wear brand, Designed, Manufactured, Dubai, Modern woman, Proudly"
+
+24. Ringilicious
+    - Description: Ringilicious is a jewelry brand specialized in 18k solid gold chain rings and customized jewelry Founded in 2013 in dubai And proudly it’s a brand with a cause
+    - Speciality Keywords: "Ringilicious, Jewelry brand, 18k solid gold, Chain rings, Customized jewelry, Dubai, Brand with a cause"
+
+25. Rula Galayini
+    - Description: DYNAMIC ACCESSORIES FOR A REAL LIFE EDGE. Rula Galayini is a reflection of the woman who wears it: strong, edgy, and sensual; a power-bag and a contemporary statement piece. Her collections are designed for the everyday, yet tailored for the surprises that one never expects. With its playful metal work, buttery leathers, streamlined geometric designs and contrasting colors, her bags are as distinct and remarkable as the women who carry them. Responding to a demand for authenticity and a lasting story that resonates with women of all ages, Rula has built an internationally acclaimed brand that caters to the woman who wants to set her own standards and to express herself wholly without compromising on taste, and more importantly, on herself.
+    - Speciality Keywords: "Dynamic accessories, Real life edge, Rula Galayini, Woman, Strong, Edgy, Sensual, Power-bag, Contemporary statement piece, Collections, Everyday, Surprises, Playful metal work, Buttery leathers, Streamlined geometric designs, Contrasting colors, Distinct, Remarkable, Internationally acclaimed, Authenticity, Lasting story, Women of all ages, Acclaimed brand, Set own standards, Express herself, Taste"
+
+26. Mahari Collection
+    - Description: Our brand is Inspired by the elegance of cultural heritage & the beauty in simplicity
+    - Speciality Keywords: "Brand, Inspired, Elegance, Cultural heritage, Beauty, Simplicity"
+
+27. Milktrain
+    - Type: International Vendor
+    - Description: An experiential ice cream brand from London, United Kingdom.
+    - Speciality Keywords: "Experiential, Ice cream brand, London, United Kingdom"
+
+28. COQ Fighter
+    - Type: International Vendor
+    - Description: Born out of frustration at the lack of high quality fried chicken options in London, Coqfighter began as a night for friends at Troy, Tristan and Deacon’s apartment in South London. Having spent the beginning of the decade living in Melbourne, they’d enjoyed many hot summer nights eating plates of Korean fried chicken, served with ice drinks in the city’s bustling Chinatown district. Nights for friends soon became pop-ups in pubs and after a series of successful residencies Coqfighter found its first permanent home with Boxpark. A short DIY build later and Coqfighter was open to the public with queues to boot. In a few short years Coqfighter has grown to three restaurant locations and a series of delivery kitchens. Their unique East meets West take on fried chicken has grown cult status amongst London’s fried chicken fans.
+    - Speciality Keywords: "High-quality fried chicken, London, Coqfighter, East meets West, Cult status, Fried chicken fans"
+
+29. Monster Inflatable
+    - Type: IP
+    - Description: The Monster is the world’s largest inflatable obstacle course, and the ultimate bouncey party for ADULTS, KIDS AND FAMILIES!with The Monster - a 300 meter long inflatable obstacle course with 42 insane obstacles.
+    - Speciality Keywords: "The Monster, World's largest inflatable obstacle course, Bouncey party, Adults, Kids, Families, 300 meters long, 42 insane obstacles"
+
+30. Indulge Family Stage
+
+31. Chapter.ae
+    - Type: Local Vendor
+    - Description: "Chapter Cafe is located in a quaint area of Abu Dhabi City, as a product and a brand of Ribbonaira Salon & Boutique. Bringing together three brands in one, Ribbonaira Floral Boutique, Chapter Cafe and Remedy Room Beauty Lounge, for an all-in-one getaway. A homey-cozy ambiance, designed in a minimalistic modern and contemporary interior with a color palette that suits your taste. Offering an exclusive and unique menu forevery season, meeting and exceeding customers’ expectations."
+    - Speciality Keywords: "Ribbonaira Floral Boutique, Chapter Cafe, Remedy Room Beauty Lounge, All-in-one escape, Cozy, Minimalistic, Modern ambiance, Tailored color palette, Exclusive seasonal menu, Culinary experience, Fusion"
+
+32. Churros Con Café
+    - Type: Local Vendor
+    - Description: Bringing you the authentic churros from Spain to Dubai! Try our delightful munchies with a variety of dips to choose from like Nutella, lotus, or dulce de leche, your churros, your choice!
+    - Speciality Keywords: "Authentic churros, Spain to Dubai, Delightful munchies, Variety of dips, Nutella, Lotus, Dulce de leche"
+
+
+33. Mattar
+    - Type: Local Vendor
+    - Description: We are a barbecue company. We make, craft and supply live fire cuisine experiences with the best ingredients and materials possible to a community of our family, friends and customers who will become so. We believe in the importance of family and the importance of human connection. We believe in the pursuit of dreams to their fullest and greatest extent. We believe there is no greater calling than to first discover this dream and to fight to pursue it relentlessly everyday. We believe in the process of cultivating character and crops of superlatives. In all of the above, and the spaces between these ideals and pursuits.
+    - Speciality Keywords: "Barbecue company, Live fire experiences, Top-quality ingredients, Community, Family, Friends, Mission, Pursuit of dreams, Human connections, Cultivation of character, Superlative experiences, Thriving, Journey"
+
+34. Lento
+    - Type: Local Vendor
+    - Description: "Lento is a chef driven artsinal street eatary"
+    - Speciality Keywords: "Lento, Chef-driven, Artisanal, Street eatery"
+
+35. Freat
+    - Type: Local Vendor
+    - Description: "To revolutionize the street food experience by delivering the world’s most loved Potatoes in its finest and most diverse form. We created mouth watering fusion loaded fries integrating creativity and fun in every potato fusion recipe representing different cultures that brings back cherished memories of home"
+    - Speciality Keywords: "Transforming street food, Globally inspired, Loaded fries, Mouth-watering fusions, Creativity, Fun, Diverse cultures, Nostalgic home memories"
+
+36. The Phil
+    - Type: Local Vendor
+    - Description: Sink your teeth into Philadelphia’s most iconic food – The Philadelphia Cheesesteak! Freshly-sliced meat, the best blend of rib eye and juicy prime cuts, provolone cheese, and semi caramelized onions all inside a soft and cloudy roll that oozes with flavor. You must try Dr. High's delicious rendition of a street food legend!
+    - Speciality Keywords: "Philly's iconic Cheesesteak, Dr. High's, Indulge, Best rib eye, Prime cuts, Provolone, Semi-caramelized onions, Flavor-packed, Cloud-like roll, Street food legend, Delicious take"
+
+37. Cremosa Goes Wonka
+    - Type: Local Vendor
+    - Description: "Cremosa offers a unique hot chocolate experience, combining premium cocoa with the finest chocolates brought in from Belgium. Our signature drink features a rich chocolate texture and is served with an array of customizable toppings, blending classic favorites with innovative twists"
+    - Speciality Keywords: "Cremosa, Unique hot chocolate experience, Premium cocoa, Belgian chocolates, Signature drink, Rich in texture, Customizable toppings, Blending classics, Innovative twists"
+
+38. J Lato
+    - Type: Local Vendor
+    - Description: At Jlate, we pride ourselves on our process. From selecting quality ingredients, to delicately crafting each recipe, we deliver a superior Gelato experience that will melt your heart. We will bring the authentic taste of Italy to Abu Dhabi by sampling the most famous Affogato (gelato & Espresso) & of course some flavors like: Pistachio, Hazelnut, and Stracciatella! No preservatives or funny stuff, just pure whole ingredients, and the right attention to detail.
+    - Speciality Keywords: "Quality ingredients, Careful craftsmanship, Superior Gelato experience, Famous Affogato, Classic flavors, Pistachio, Hazelnut, Stracciatella, Pure ingredients, Meticulous attention to detail"
+
+39. Baofriend
+    - Type: Local Vendor
+    - Description: "Not A One Bite Stand Baofriend is a funky, fun restaurant on Abu Dhabi's East Corniche that serves Bao sandwiches and A One Stop Asian Restaurant offering Seven Great Flavors. Baofriend is the newest and coolest place to get a bao and the city's newest hangout that offers something for everyone."
+    - Speciality Keywords: "Funky hotspot, Baofriend, Bao sandwiches, Seven Great Flavors, Coolest place, Diverse Asian menu, City's latest hangout, Everyone"
+
+40. Ugly Noodles by Ugly Bros
+    - Type: Local Vendor
+    - Description: "Ugly Noodles is a ""pop up only"" dumpling and noodle concept inspired by the streets of Hong Kong. Brainchild of the Ugly Boys, Chef Eric Lee, Chef Khaled, Chang and Young, Ugly Noodles has started and stayed as exclusively pop ups since their first one at To The Moon & Back in February. The signature menu is the plump, juicy Chicken & Shrimp Sichuan Wontons topped with homemade chili oil and the infamously addictive Dan Dan Noodles that packs a punch of flavour that Bruce Lee would be proud of.  Other dishes rotate occasionally such as the Impossible Gyoza, Scallop Siumai, Wagyu Beef Skewers and more. Dessert has always featured a collaboration between Ugly and local artisanal gelato maker Canvas Gelato. Some of the more popular gelatos featured were Korean Mandarin Sorbet, Basque Cheesecake Vanilla Gelato and Black Sesame. What started as a passion project has turned into an amazing journey between the brand and its pop up partners, further developing the grass roots collaborative pop up movement in the community. We hope to not just serve delicious food but also to create a blueprint for other aspiring food entrepreneurs to follow in the future."
+    - Speciality Keywords: "Ugly Boys, Pop-up, Hong Kong street-inspired, Dumplings, Noodles, Rotating pop-ups, Signature dishes, Chicken & Shrimp Sichuan Wontons, Dan Dan Noodles"
+
+41. Tiger Sugar
+    - Type: Local Vendor
+    - Description: Tiger Sugar has grown into an undisputed cult brand of Boba worldwide. Their drinks tell their unique story with "tiger stripes" that are infused onto every order with unique hand-poured syrups. Their specialty is the original brown sugar bubble tea, with fresh cream and a unique tiger stripe design.⁣
+    - Speciality Keywords: "Tiger Sugar, Global Boba cult brand, Hand-poured syrups, Unique story, Tiger stripes, Original brown sugar bubble tea, Fresh cream, Distinctive design"
+
+42. Lobster Roll
+    - Type: Local Vendor
+    - Description: Home-grown seafood concept that serves lobster meat with special sauce like no place else. Sink your teeth into soft buttered buns mounded with chunks of fresh lobster. A delicious delight you cannot miss!
+    - Speciality Keywords: "Home-grown seafood concept, Lobster meat, Special sauce, Soft buttered buns, Chunks of fresh lobster, Delicious delight, Seafood, Unique sauce, Lobster dish"
+
+43. This is Hot Dog
+    - Type: Local Vendor
+    - Description: This Is Hot Dog brings a new one-of-a-kind twist to a beloved culinary favourite. They aim to change the way people think about hot dogs and have developed a mouthwatering array of flavourful fusions, adding unique ingredients and a gourmet touch.
+    - Speciality Keywords: "This Is Hot Dog, One-of-a-kind twist, Beloved culinary favorite, Change the way people think, Mouthwatering array, Flavorful fusions, Unique ingredients, Gourmet touch, Hot dogs"
+
+44. Petit Comptoir
+    - Type: Local Vendor
+    - Description: "Petit Comptoir is a French Streetfood concept that offers a delicious steak served on a bed of homemade fries, accompanied by a fresh salad and a sauce prepared on site. Our menu offers a variety of meats, including the famous Wagyu rib eye, black angus striploin and even duck. With our attention to detail and professional know-how, we guarantee you an exceptional dining experience."
+    - Speciality Keywords: "French Streetfood concept, Delicious steak, Homemade fries, Fresh salad, Sauce prepared on site, Menu variety, Meats, Wagyu rib eye, Black Angus striploin, Duck"
+
+45. Sweet on Wheels
+    - Type: Local Vendor
+    - Description: Joyful mobile kiosk serving up exquisite Mini Pancakes, modern Crêpes, warm Waffles, and delightful Ice-Cream Rolls. We make every event sweeter!
+    - Speciality Keywords: "Joyful mobile kiosk, Exquisite Mini Pancakes, Modern Crêpes, Warm Waffles, Delightful Ice-Cream Rolls, Event sweets"
+
+46. La Maison
+    - Type: Local Vendor
+    - Description: Passionately baking original Liège waffles daily, La Maison is beyond a shop, serving as a love statement to Liège and its waffles. Sharing the essence of the Liège waffle and convey the love for their hometown, Liège
+    - Speciality Keywords: "Passionately baking, Original Liège waffles, La Maison, Shop, Love statement, Liège, Essence, Hometown, Sharing, Convey, Love"

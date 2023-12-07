@@ -1,0 +1,45 @@
+Following is the list of rides and activities available at amuze zone with their description.
+- Name: The Upside Down Experience (Type: I.P)
+   - More Info: Ready for your world to be turned Upside Down? This immersive social media experience from Amsterdam and soon to be in Berlin features an amazing ball pit, upside-down built rooms, mind-blowing optical illusions, and interactive decors, all drenched in their typical Dutch sauce. Take your social media game to a whole new level with endless photo opportunities and, most importantly, have fun! 😉 All the way from Amsterdam and soon to be found in Berlin, The Upside Down is an immersive social media experience with endless photo opportunities. Expect an amazing ball pit, upside-down rooms, mind-blowing optical illusions, and interactive decors.
+   - Instagram Link: https://www.instagram.com/upsidedownamsterdam/
+   - Keywords: "The Upside Down, Immersive social media experience, Photo opportunities, Social media game, Ball pit, Upside-down rooms, Mind-blowing optical illusions, Interactive decors, Experience"
+
+
+- Name: Spacetoon Land (Type: I.P)
+   - More Info: Imagination comes alive in Spacetoon Land, where Barbie and Sonic join forces to create an amazing experience for both girls and boys. This collaboration promises an extraordinary adventure filled with the magic of Barbie's worldwide success and Sonic's recent hit, Frontiere game, making it a sure-fire win with kids. Imagination comes alive with Barbie and Sonic coming together to create an amazing experience for both girls and boys to enjoy!
+   - Keywords: "Imagination, Barbie, Sonic, Amazing experience, Girls, Boys, Enjoyment, Playful atmosphere"
+
+
+- Name: Carousel Grande (Type: Carnival)
+   - More Info: A classic amusement ride that's very popular with young children, Carousel Grande features themes around horses, chariots, and benches. It provides an enjoyable ride as they go up and down while the carousel rotates. Suitable for all ages, with a height restriction of 0.75m and over. The popular amusement park ride, themed around horses and chariots, will take your children on a magical trip.
+   - Keywords: "Amusement park ride, Themed, Horses, Chariots, Children, Magical trip, Popular"
+
+
+- Name: Tea Cups (Type: Carnival)
+   - More Info: Embark on a whimsical adventure in our Twirling Tea Cups, where laughter and delight spin together in a magical carnival experience for all ages! Suitable for ages 3 and above, with a height restriction of 120cm unless accompanied by an adult. Embark on a whimsical adventure in our Twirling Tea Cups, where laughter and delight spin together in a magical carnival experience for all ages!
+   - Keywords: "Whimsical adventure, Twirling Tea Cups, Laughter, Delight, Spin together, Magical carnival experience"
+
+
+- Name: Octopus (Type: Carnival)
+   - More Info: Ride the waves of fun with Octopus, where tentacles twirl and carnival magic swirls! Suitable for ages 4 and above, with a height restriction of 120cm unless accompanied by an adult. Ride the waves of fun with Octopus, where tentacles twirl and carnival magic swirls!
+   - Keywords: "Ride the waves, Fun, Octopus, Tentacles, Carnival magic, Swirls"
+
+
+- Name: Play Park (Type: Activities)
+   - More Info: The playscape is a fun engaging area where kids can let their imagination and creativity flow in these make-believe playhouse pop-ups. The playscape is a fun engaging area where kids can let their imagination and creativity flow in these make-believe playhouse pop-ups.
+   - Keywords: "Fun-themed course, Slides, Climbing obstacles, Children, Burn energy, Play Park"
+
+
+- Name: Play Scape (Type: Activities)
+   - More Info: A larger-than-life outdoor playscape area designed for a fun and immersive experience for toddlers and young children. It includes playhouses, swings, phone booths, diners, cafes, drive-ins, roller rooms, vinyl shops, and more. A larger-than-life outdoor playscape area for a fun and immersive experience for toddlers and young children.
+   - Keywords: "Larger-than-life, Outdoor playscape, Fun, Immersive experience, Toddlers, Young children"
+
+
+- Name: Arts and Crafts (Type: Activities)
+   - More Info: In line with the carnival theme, arts and crafts sessions will be hosted in the structures. Sessions will be capped at 20 minutes each with a maximum of 6 kids per structure, starting from 16:10 and ending at 23:00.
+   - Keywords: "Carnival theme, Arts and crafts structures"
+
+
+- Name: Skill Games (Type: Activities)
+   - More Info: Try your luck at MOTN skill games and win a prize! This year's games include Fried Frogs, Hook A Flamingo, and Basketball.
+   - Keywords: "Skill games, Fried Frogs, Catch Frogs, Prize, Trade Up, Bigger Prize, Options, Hook a Flamingo, Tank, Add up the numbers, Corresponding prize, Basketball, Throw, Ball, Basket Win"
