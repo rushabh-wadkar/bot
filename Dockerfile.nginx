@@ -6,8 +6,5 @@ RUN rm /etc/nginx/conf.d/default.conf
 # Copy the nginx configuration file
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# Copy SSL certificates to the container
-COPY BFD6AA2CF52342107D84E2ED92A21A56.txt /usr/share/nginx/html/BFD6AA2CF52342107D84E2ED92A21A56.txt
-
 # Expose port 80
 EXPOSE 80
