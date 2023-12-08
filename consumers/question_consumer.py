@@ -16,6 +16,7 @@ import requests
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
 import pymongo
+import random
 
 logger = RMQLogger()
 
@@ -195,32 +196,40 @@ def handle_question_callback(ch, method, properties, body):
         chat_profile = message["webhook_msg"]["contact_info"]
         chat_entry_id = message["webhook_msg"]["entry_id"]
 
-        chat.memory.clear()
-        chat.memory.chat_memory.clear()
+        # Process question
+        question = question.strip()
+        lowercase_question = question.lower()
+        if len(question) <= 7 and lowercase_question in constants.PREDEFINED_ANSWERS:
+            answers = constants.PREDEFINED_ANSWERS[lowercase_question]
+            response = random.choice(answers)
+        else:
+            chat.memory.clear()
+            chat.memory.chat_memory.clear()
 
-        if constants.FETCH_PREVIOUS_QUESTIONS:
-            q_list = fetch_previous_questions(from_number)
+            if constants.FETCH_PREVIOUS_QUESTIONS:
+                q_list = fetch_previous_questions(from_number)
 
-            for item in q_list:
-                chat.memory.chat_memory.add_user_message(
-                    message=item["chat_question"])
-                chat.memory.chat_memory.add_ai_message(
-                    message=item["chat_answer"])
+                for item in q_list:
+                    chat.memory.chat_memory.add_user_message(
+                        message=item["chat_question"])
+                    chat.memory.chat_memory.add_ai_message(
+                        message=item["chat_answer"])
 
-        result = chat({"question": question}, return_only_outputs=True)
-        response = result["answer"]
-        if response == None or response == "" or len(response) == 0:
-            response = "I'm sorry, I couldn't generate a response at the moment. Please feel free to ask something else or try again later."
-        elif response.startswith("Answer:"):
-            response = response[len("Answer:"):]
+            result = chat({"question": question}, return_only_outputs=True)
+            response = result["answer"]
+            if response == None or response == "" or len(response) == 0:
+                response = "I'm sorry, I couldn't generate a response at the moment. Please feel free to ask something else or try again later."
+            elif response.startswith("Answer:"):
+                response = response[len("Answer:"):]
 
-        response = response.strip()
-        # response = response.replace("\n", ".")
-        # response = response.replace("\t", " ")
+            response = response.strip()
+            # response = response.replace("\n", ".")
+            # response = response.replace("\t", " ")
 
         model_response_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")
         total_processing_time = time.time() - fn_start_time
-        # print(f"[Question]: {question} ------> {response} ### [ Time: {total_processing_time}]")
+        print(
+            f"[Question]: {question} ------> {response} ### [ Time: {total_processing_time}]")
 
         url = f"https://graph.facebook.com/v18.0/{phone_number_id}/messages?access_token={constants.WHATSAPP_TOKEN}"
         payload = {
