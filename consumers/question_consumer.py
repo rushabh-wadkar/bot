@@ -6,7 +6,7 @@ import traceback
 from datetime import datetime
 import constants
 from rmqLogger import RMQLogger
-from langchain.embeddings import VertexAIEmbeddings
+from langchain.embeddings import VertexAIEmbeddings, HuggingFaceBgeEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.chains import RetrievalQA
 from langchain.llms import VertexAI
@@ -50,9 +50,15 @@ channel.queue_bind(exchange=constants.MODEL_CONFIG_EXCHANGE, queue=queue_name)
 
 
 ###### LOAD DATA #############
-embeddings = VertexAIEmbeddings()
+
+model_name = "BAAI/bge-large-en-v1.5"
+embeddings = HuggingFaceBgeEmbeddings(model_name=model_name)
 db = FAISS.load_local(folder_path=constants.MODEL_DB_SAVE_PATH,
                       embeddings=embeddings, index_name=constants.MODEL_DB_INDEX_NAME)
+
+# embeddings = VertexAIEmbeddings()
+# db = FAISS.load_local(folder_path=constants.MODEL_DB_SAVE_PATH,
+#                       embeddings=embeddings, index_name=constants.MODEL_DB_INDEX_NAME)
 
 retriever = db.as_retriever(search_type=constants.MODEL_SEARCH_TYPE, search_kwargs={
                             "k": constants.MODEL_SEARCH_K})
@@ -63,37 +69,82 @@ llm = VertexAI(
     temperature=constants.MODEL_TEMPERATURE,
 )
 
-# llm = VertexAI(
-#     model_name=constants.MODEL_NAME,
-#     max_output_tokens=constants.MODEL_MAX_OUTPUT_TOKEN,
-#     temperature=constants.MODEL_TEMPERATURE,
-#     verbose=constants.MODEL_VERBOSE
-# )
+# New update
+_template = """Given the following conversation and a follow up input, rephrase the follow up input based on the following rules -
+1. If it is a normal greeting like Hi, Hello, Hey, Whatsup. Erase your memory and start the chart fresh.
+2. If it is good bye, greet the user good bye.
+3. If it is statement response like ok, no problem, cool, alright. Just answer "Awesome. Thank you contacting. Feel free to ask me anything about MOTN."
+4. Do not assume anything out of context. If you don't know, please keep the question as is.
+    
+Chat History:
+{chat_history}
 
-# template = """You are a female chatbot assistant for the MOTN (also known as Mother of Nation) festival. Your purpose is to provide warm and gentle responses strictly related to the MOTN festival. Please refrain from answering anything not related to the festival or its context. Use language detection to ensure you respond in the same language as the user's question. If the question is in Arabic, respond in Arabic; Otherwise, respond in English. If you don't know the answer, state that you don't know and do not provide unrelated information.
-# Always elaborate on your answer in two or three sentences based on the context if you find any relevant documents.
+Input: {question}
+Standalone question:"""
 
-# Context: {context}
+CONDENSE_QUESTION_PROMPT = PromptTemplate.from_template(_template)
 
-# Question: {question}
-# # Helpful Answer:"""
+template = """You are a chatbot assistant for the MOTN festival (Also known as Mother of Nation festival).You are having a friendly conversation with a customer who wants to know more about MOTN festival.If a question is asked out of context, please warmly suggest that you can answer questions only about MOTN festival.Please generate a warm, friendly and exciting responses.If you don't know the answer, please state that you do not know.Please don't make up any answer on your own.
+If the question is asked about food options in a particular zone, please answer for the specified zone only without any assumptions.
+You should strictly answer based on the context below -
 
-# PROMPT = PromptTemplate(template=template, input_variables=[
-#                         'context', 'question'])
+{context}
 
-# template = """Act as a female assistant for the MOTN (also known as Mother of Nation) festival who is having a friendly conversation. Use language detection to ensure you respond in the same language as the user's question. If the question is in Arabic, respond in Arabic; Otherwise, respond in English. Please refrain from answering anything not related to the festival or its context.  If you don't know the answer, state that you don't know and do not provide unrelated information.
-# Strictly Answer based on the below context only in the most humble, gentle, responsible and empathetic way.
+Chat History:
+{chat_history}
 
-# Context: {context}
+Human: {question}
+AI Assistant:"""
 
-# Current conversation:
-# {chat_history}
-# Human: {question}
-# AI Assistant:"""
+PROMPT = PromptTemplate(template=template, input_variables=[
+                        'context', 'chat_history', 'question'])
 
-# template = """You are a female chatbot assistant for the MOTN (also known as Mother of Nation) festival. Your purpose is to provide warm and gentle responses strictly related to the MOTN festival. Please refrain from answering anything not related to the festival or its context.If you don't know the answer, state that you don't know and do not provide unrelated information.
-# Strictly respond in the user asked language only. If a question is not about the festival/event, politely inform the user that you are tuned to only answer questions about the MOTN festival. If you find an answer, Please provide a detailed response.
+memory = ConversationBufferMemory(
+    memory_key="chat_history", ai_prefix="AI Assistant", return_messages=True)
 
+chat = ConversationalRetrievalChain.from_llm(
+    llm, retriever, memory=memory, condense_question_prompt=CONDENSE_QUESTION_PROMPT, combine_docs_chain_kwargs={"prompt": PROMPT}, verbose=constants.MODEL_VERBOSE)
+# End of new update
+
+# # llm = VertexAI(
+# #     model_name=constants.MODEL_NAME,
+# #     max_output_tokens=constants.MODEL_MAX_OUTPUT_TOKEN,
+# #     temperature=constants.MODEL_TEMPERATURE,
+# #     verbose=constants.MODEL_VERBOSE
+# # )
+
+# # template = """You are a female chatbot assistant for the MOTN (also known as Mother of Nation) festival. Your purpose is to provide warm and gentle responses strictly related to the MOTN festival. Please refrain from answering anything not related to the festival or its context. Use language detection to ensure you respond in the same language as the user's question. If the question is in Arabic, respond in Arabic; Otherwise, respond in English. If you don't know the answer, state that you don't know and do not provide unrelated information.
+# # Always elaborate on your answer in two or three sentences based on the context if you find any relevant documents.
+
+# # Context: {context}
+
+# # Question: {question}
+# # # Helpful Answer:"""
+
+# # PROMPT = PromptTemplate(template=template, input_variables=[
+# #                         'context', 'question'])
+
+# # template = """Act as a female assistant for the MOTN (also known as Mother of Nation) festival who is having a friendly conversation. Use language detection to ensure you respond in the same language as the user's question. If the question is in Arabic, respond in Arabic; Otherwise, respond in English. Please refrain from answering anything not related to the festival or its context.  If you don't know the answer, state that you don't know and do not provide unrelated information.
+# # Strictly Answer based on the below context only in the most humble, gentle, responsible and empathetic way.
+
+# # Context: {context}
+
+# # Current conversation:
+# # {chat_history}
+# # Human: {question}
+# # AI Assistant:"""
+
+# # template = """You are a female chatbot assistant for the MOTN (also known as Mother of Nation) festival. Your purpose is to provide warm and gentle responses strictly related to the MOTN festival. Please refrain from answering anything not related to the festival or its context.If you don't know the answer, state that you don't know and do not provide unrelated information.
+# # Strictly respond in the user asked language only. If a question is not about the festival/event, politely inform the user that you are tuned to only answer questions about the MOTN festival. If you find an answer, Please provide a detailed response.
+
+# # {context}
+
+# # Current conversation:
+# # {chat_history}
+# # Human: {question}
+# # AI Assistant:"""
+
+# template = """You are a female chatbot assistant for the MOTN festival (Also known as Mother of Nation).You are having a friendly conversation with a potential customer who wants to know more about MOTN festival.If a question is asked out of context, please warmly suggest that you can answer questions only about MOTN festival.If you don't know the answer, please apologize and state that you do not know.You should strictly answer based on the context below.
 # {context}
 
 # Current conversation:
@@ -101,27 +152,19 @@ llm = VertexAI(
 # Human: {question}
 # AI Assistant:"""
 
-template = """You are a female chatbot assistant for the MOTN festival (Also known as Mother of Nation).You are having a friendly conversation with a potential customer who wants to know more about MOTN festival.If a question is asked out of context, please warmly suggest that you can answer questions only about MOTN festival.If you don't know the answer, please apologize and state that you do not know.You should strictly answer based on the context below.
-{context}
+# PROMPT = PromptTemplate(template=template, input_variables=[
+#                         'context', 'question', 'chat_history'])
 
-Current conversation:
-{chat_history}
-Human: {question}
-AI Assistant:"""
+# memory = ConversationBufferMemory(
+#     memory_key="chat_history", ai_prefix="AI Assistant", return_messages=True)
+# # chat = RetrievalQA.from_chain_type(
+# #     llm=llm, chain_type="stuff", retriever=retriever, memory=memory, verbose=constants.MODEL_VERBOSE, chain_type_kwargs={
+# #         "prompt": PROMPT,
+# #         "verbose": constants.MODEL_VERBOSE
+# #     },)
 
-PROMPT = PromptTemplate(template=template, input_variables=[
-                        'context', 'question', 'chat_history'])
-
-memory = ConversationBufferMemory(
-    memory_key="chat_history", ai_prefix="AI Assistant", return_messages=True)
-# chat = RetrievalQA.from_chain_type(
-#     llm=llm, chain_type="stuff", retriever=retriever, memory=memory, verbose=constants.MODEL_VERBOSE, chain_type_kwargs={
-#         "prompt": PROMPT,
-#         "verbose": constants.MODEL_VERBOSE
-#     },)
-
-chat = ConversationalRetrievalChain.from_llm(
-    llm, retriever, memory=memory, combine_docs_chain_kwargs={"prompt": PROMPT}, verbose=constants.MODEL_VERBOSE)
+# chat = ConversationalRetrievalChain.from_llm(
+#     llm, retriever, memory=memory, combine_docs_chain_kwargs={"prompt": PROMPT}, verbose=constants.MODEL_VERBOSE)
 
 updated_db_index = None
 # db2 = FAISS.from_texts(
