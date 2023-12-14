@@ -271,8 +271,7 @@ def handle_question_callback(ch, method, properties, body):
 
         model_response_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")
         total_processing_time = time.time() - fn_start_time
-        print(
-            f"[Question]: {question} ------> {response} ### [ Time: {total_processing_time}]")
+        # print(f"[Question]: {question} ------> {response} ### [ Time: {total_processing_time}]")
 
         url = f"https://graph.facebook.com/v18.0/{phone_number_id}/messages?access_token={constants.WHATSAPP_TOKEN}"
         payload = {

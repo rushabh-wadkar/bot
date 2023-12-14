@@ -1,5 +1,8 @@
 __pycache__
 aienv
+.vscode
+.apienv
+.cenv
 secret.txt
 INSTALL.README
 notebooks

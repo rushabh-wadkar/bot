@@ -1,0 +1,7 @@
+fastapi
+pymongo
+nanoid
+uvicorn
+demoji
+bleach
+pika
