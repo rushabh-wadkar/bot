@@ -33,12 +33,12 @@ MODEL_DATA_PATH = './consumers/data/textfiles/'
 MODEL_DB_SAVE_PATH = './consumers/db'
 MODEL_DB_INDEX_NAME = 'data_injest'
 MODEL_SEARCH_TYPE = 'similarity'
-MODEL_SEARCH_K = 3
+MODEL_SEARCH_K = 5
 
-MODEL_NAME = "text-bison@002"
+MODEL_NAME = "text-bison@001"
 MODEL_MAX_OUTPUT_TOKEN = 500
 # MODEL_TOP_P = 0.9
-MODEL_TEMPERATURE = 0.1
+MODEL_TEMPERATURE = 0.3
 MODEL_VERBOSE = False
 
 

@@ -61,7 +61,7 @@ db = FAISS.load_local(folder_path=constants.MODEL_DB_SAVE_PATH,
 #                       embeddings=embeddings, index_name=constants.MODEL_DB_INDEX_NAME)
 
 retriever = db.as_retriever(search_type=constants.MODEL_SEARCH_TYPE, search_kwargs={
-                            "k": constants.MODEL_SEARCH_K})
+                            "k": constants.MODEL_SEARCH_K, "fetch_k": 500})
 
 llm = VertexAI(
     model_name=constants.MODEL_NAME,
@@ -70,11 +70,7 @@ llm = VertexAI(
 )
 
 # New update
-_template = """Given the following conversation and a follow up input, rephrase the follow up input based on the following rules -
-1. If it is a normal greeting like Hi, Hello, Hey, Whatsup. Erase your memory and start the chart fresh.
-2. If it is good bye, greet the user good bye.
-3. If it is statement response like ok, no problem, cool, alright. Just answer "Awesome. Thank you contacting. Feel free to ask me anything about MOTN."
-4. Do not assume anything out of context. If you don't know, please keep the question as is.
+_template = """Given the following conversation and a follow up input, rephrase the follow up input to a standalone question.
     
 Chat History:
 {chat_history}
@@ -84,8 +80,7 @@ Standalone question:"""
 
 CONDENSE_QUESTION_PROMPT = PromptTemplate.from_template(_template)
 
-template = """You are a chatbot assistant for the MOTN festival (Also known as Mother of Nation festival).You are having a friendly conversation with a customer who wants to know more about MOTN festival.If a question is asked out of context, please warmly suggest that you can answer questions only about MOTN festival.Please generate a warm, friendly and exciting responses.If you don't know the answer, please state that you do not know.Please don't make up any answer on your own.
-If the question is asked about food options in a particular zone, please answer for the specified zone only without any assumptions.
+template = """You are a chatbot assistant for the MOTN festival (Also known as Mother of Nation festival).You are having a friendly conversation with a customer who wants to know more about MOTN festival.If a question is asked out of context, please warmly suggest that you can answer questions only about MOTN festival.Please generate a detailed and exciting response when answering.If you don't know the answer, please state that you do not know.Please don't make up any answer on your own.
 You should strictly answer based on the context below -
 
 {context}
@@ -93,8 +88,8 @@ You should strictly answer based on the context below -
 Chat History:
 {chat_history}
 
-Human: {question}
-AI Assistant:"""
+User Question: {question}
+Answer:"""
 
 PROMPT = PromptTemplate(template=template, input_variables=[
                         'context', 'chat_history', 'question'])
@@ -202,7 +197,7 @@ def fetch_previous_questions(chat_from):
         filter_query = {"chat_from": chat_from}
         projection = {"_id": 0, "chat_question": 1, "chat_answer": 1}
         sort_query = [("chat_timestamp", -1)]
-        limit = 10
+        limit = 5
 
         # Execute the query
         cursor = chats_collection.find(
