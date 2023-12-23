@@ -3,7 +3,7 @@ import json
 import sys
 import os
 import traceback
-from datetime import datetime
+from datetime import datetime, timedelta
 import constants
 from rmqLogger import RMQLogger
 from langchain.embeddings import VertexAIEmbeddings, HuggingFaceBgeEmbeddings
@@ -17,6 +17,7 @@ from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
 import pymongo
 import random
+import re
 
 logger = RMQLogger()
 
@@ -193,8 +194,10 @@ def consume_model_injest_channel(channel):
 
 def fetch_previous_questions(chat_from):
     try:
+        # Calculate the datetime two hours ago from the current time
+        two_hours_ago = datetime.utcnow() - timedelta(hours=2)
         # Define the filter, projection, sort, and limit for the query
-        filter_query = {"chat_from": chat_from}
+        filter_query = {"chat_from": chat_from, "chat_timestamp": {"$gte": two_hours_ago}}
         projection = {"_id": 0, "chat_question": 1, "chat_answer": 1}
         sort_query = [("chat_timestamp", -1)]
         limit = 5
@@ -229,7 +232,7 @@ def handle_question_callback(ch, method, properties, body):
         phone_number_id = message["webhook_msg"]["metadata"]["phone_number_id"]
         from_number = message["webhook_msg"]["message"]["from"]
         chat_id = message["webhook_msg"]["message"]["id"]
-        chat_timestamp = datetime.fromtimestamp(
+        chat_timestamp = datetime.utcfromtimestamp(
             float(message["webhook_msg"]["message"]["timestamp"]))
         chat_profile = message["webhook_msg"]["contact_info"]
         chat_entry_id = message["webhook_msg"]["entry_id"]
@@ -255,10 +258,16 @@ def handle_question_callback(ch, method, properties, body):
 
             result = chat({"question": question}, return_only_outputs=True)
             response = result["answer"]
+            
+            if response.startswith("Answer:"):
+                response = response[len("Answer:"):]
+            elif "Human:" in response or "Assistant:" in response:
+                match = re.search(r'\b(?:Human|Assistant):', response)
+                cleaned_response = response if not match else response[:match.start()]
+                response = cleaned_response.strip()
+
             if response == None or response == "" or len(response) == 0:
                 response = "I'm sorry, I couldn't generate a response at the moment. Please feel free to ask something else or try again later."
-            elif response.startswith("Answer:"):
-                response = response[len("Answer:"):]
 
             response = response.strip()
             # response = response.replace("\n", ".")
