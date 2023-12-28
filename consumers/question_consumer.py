@@ -52,6 +52,11 @@ channel.queue_bind(exchange=constants.MODEL_CONFIG_EXCHANGE, queue=queue_name)
 
 ###### LOAD DATA #############
 
+def _get_datetime():
+    now = datetime.now()
+    return now.strftime("%B %d %Y")
+
+
 model_name = "BAAI/bge-large-en-v1.5"
 embeddings = HuggingFaceBgeEmbeddings(model_name=model_name)
 db = FAISS.load_local(folder_path=constants.MODEL_DB_SAVE_PATH,
@@ -71,7 +76,7 @@ llm = VertexAI(
 )
 
 # New update
-_template = """Given the following conversation and a follow up input, rephrase the follow up input to a standalone question.
+_template = """Given the following conversation and a follow up input, rephrase the follow up input to a standalone question.The date today is {date}, so if a question is asked about any event or dates then please include the date in the standalone question.
     
 Chat History:
 {chat_history}
@@ -79,12 +84,15 @@ Chat History:
 Input: {question}
 Standalone question:"""
 
-CONDENSE_QUESTION_PROMPT = PromptTemplate.from_template(_template)
+CONDENSE_QUESTION_PROMPT = PromptTemplate.from_template(
+    _template, partial_variables={"date": _get_datetime})
 
 template = """You are a chatbot assistant for the MOTN festival (Also known as Mother of Nation festival).You are having a friendly conversation with a customer who wants to know more about MOTN festival.If a question is asked out of context, please warmly suggest that you can answer questions only about MOTN festival.Please generate a detailed and exciting response when answering.If you don't know the answer, please state that you do not know.Please don't make up any answer on your own.
 You should strictly answer based on the context below -
 
 {context}
+
+Today's Date: {date}
 
 Chat History:
 {chat_history}
@@ -93,7 +101,7 @@ User Question: {question}
 Answer:"""
 
 PROMPT = PromptTemplate(template=template, input_variables=[
-                        'context', 'chat_history', 'question'])
+                        'context', 'chat_history', 'question'], partial_variables={"date": _get_datetime})
 
 memory = ConversationBufferMemory(
     memory_key="chat_history", ai_prefix="AI Assistant", return_messages=True)
@@ -197,7 +205,8 @@ def fetch_previous_questions(chat_from):
         # Calculate the datetime two hours ago from the current time
         two_hours_ago = datetime.utcnow() - timedelta(hours=2)
         # Define the filter, projection, sort, and limit for the query
-        filter_query = {"chat_from": chat_from, "chat_timestamp": {"$gte": two_hours_ago}}
+        filter_query = {"chat_from": chat_from,
+                        "chat_timestamp": {"$gte": two_hours_ago}}
         projection = {"_id": 0, "chat_question": 1, "chat_answer": 1}
         sort_query = [("chat_timestamp", -1)]
         limit = 5
@@ -258,12 +267,13 @@ def handle_question_callback(ch, method, properties, body):
 
             result = chat({"question": question}, return_only_outputs=True)
             response = result["answer"]
-            
+
             if response.startswith("Answer:"):
                 response = response[len("Answer:"):]
             elif "Human:" in response or "Assistant:" in response:
                 match = re.search(r'\b(?:Human|Assistant):', response)
-                cleaned_response = response if not match else response[:match.start()]
+                cleaned_response = response if not match else response[:match.start(
+                )]
                 response = cleaned_response.strip()
 
             if response == None or response == "" or len(response) == 0:
